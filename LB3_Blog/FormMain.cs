@@ -39,12 +39,15 @@ namespace LB3_Blog
         {
             if (this.db != null)
             {
-                var user = (User)this.dataGridViewUsers.CurrentRow.DataBoundItem;
-
-                if (user != null)
+                if (this.dataGridViewUsers.CurrentRow != null)
                 {
-                    this.db.Entry(user).Collection(e => e.Posts).Load();
-                    this.dataGridViewPosts.DataSource = user.Posts;
+                    var user = (User)this.dataGridViewUsers.CurrentRow.DataBoundItem;
+
+                    if (user != null)
+                    {
+                        this.db.Entry(user).Collection(e => e.Posts).Load();
+                        this.dataGridViewPosts.DataSource = user.Posts;
+                    }
                 }
             }
         }
