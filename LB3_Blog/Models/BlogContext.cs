@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LB3_Blog.Models;
 
-public partial class BlogLb3Context : DbContext
+public partial class BlogContext : DbContext
 {
-    public BlogLb3Context()
+    public BlogContext()
     {
     }
 
-    public BlogLb3Context(DbContextOptions<BlogLb3Context> options)
+    public BlogContext(DbContextOptions<BlogContext> options)
         : base(options)
     {
     }
